@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BasicApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +22,75 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="TV9-Nb-4cr">
+                                <rect key="frame" x="16" y="40" width="343" height="508"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Multiscreen App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLJ-01-8xs">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3av-NC-Jkd">
+                                        <rect key="frame" x="126.5" y="57" width="90" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="START"/>
+                                        <connections>
+                                            <action selector="setDefaultScreen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qAj-F5-mzU"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter screen" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1TC-0d-sEp">
+                                        <rect key="frame" x="0.0" y="120" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="hrl-fl-KQf">
+                                        <rect key="frame" x="0.0" y="165" width="343" height="343"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="hrl-fl-KQf" secondAttribute="height" multiplier="1:1" id="JD1-bO-QfA"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="ZgY-MW-wYA" appends="YES" id="7OM-X6-se4"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="XLJ-01-8xs" secondAttribute="trailing" id="Hd1-zc-TZ9"/>
+                                    <constraint firstItem="hrl-fl-KQf" firstAttribute="leading" secondItem="TV9-Nb-4cr" secondAttribute="leading" id="Vx1-oM-s4g"/>
+                                    <constraint firstAttribute="trailing" secondItem="hrl-fl-KQf" secondAttribute="trailing" id="ZuD-HH-5VQ"/>
+                                    <constraint firstItem="1TC-0d-sEp" firstAttribute="leading" secondItem="TV9-Nb-4cr" secondAttribute="leading" id="b8c-bs-x0Z"/>
+                                    <constraint firstItem="XLJ-01-8xs" firstAttribute="leading" secondItem="TV9-Nb-4cr" secondAttribute="leading" id="n7c-Sc-bP7"/>
+                                    <constraint firstAttribute="trailing" secondItem="1TC-0d-sEp" secondAttribute="trailing" id="uq0-A0-LsR"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="TV9-Nb-4cr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="BiI-Dm-P2S"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TV9-Nb-4cr" secondAttribute="trailing" id="kDo-QZ-XwU"/>
+                            <constraint firstItem="TV9-Nb-4cr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="tvF-iU-Tqg"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="photoImageView" destination="hrl-fl-KQf" id="SpS-zt-PWv"/>
+                        <outlet property="screenLabel" destination="XLJ-01-8xs" id="D2q-86-I6k"/>
+                        <outlet property="screenName" destination="1TC-0d-sEp" id="qUY-aE-PPc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ZgY-MW-wYA">
+                    <connections>
+                        <action selector="selectImageFromLibrary:" destination="BYZ-38-t0r" id="WsI-rc-rtj"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="defaultPhoto" width="2016" height="1512"/>
+    </resources>
 </document>
