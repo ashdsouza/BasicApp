@@ -79,6 +79,7 @@
                     </view>
                     <connections>
                         <outlet property="photoImageView" destination="hrl-fl-KQf" id="SpS-zt-PWv"/>
+                        <outlet property="ratingControl" destination="qjc-pN-jGl" id="1ou-HT-F2d"/>
                         <outlet property="screenLabel" destination="XLJ-01-8xs" id="D2q-86-I6k"/>
                         <outlet property="screenName" destination="1TC-0d-sEp" id="qUY-aE-PPc"/>
                     </connections>
